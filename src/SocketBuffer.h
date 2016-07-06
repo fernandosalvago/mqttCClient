@@ -25,7 +25,7 @@
 #endif
 
 #if defined(OPENSSL)
-#include <openssl/ssl.h>
+#include "SSLSocket.h"
 #endif
 
 #if defined(WIN32) || defined(WIN64)

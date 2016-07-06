@@ -24,7 +24,7 @@
 #if defined(WIN32) || defined(WIN64)
 #include "winsock2.h"
 #endif
-#include <openssl/ssl.h>
+#include "SSLSocket.h"
 #endif
 #include "MQTTClient.h"
 #include "LinkedList.h"

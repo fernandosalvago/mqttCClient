@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\MQTTClient.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\MQTTProtocolClient.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\Clients.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\utf-8.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\StackTrace.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\MQTTPacket.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\MQTTPacketOut.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\Messages.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\Tree.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\Socket.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\Log.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\MQTTPersistence.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\Thread.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\MQTTProtocolOut.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\MQTTPersistenceDefault.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\SocketBuffer.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\Heap.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\common_obj.dir\$(Configuration)\LinkedList.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{87AEADA6-505C-3DC3-A09E-5D9A6CFC0DCB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object Files">
+      <UniqueIdentifier>{3B7105AD-CD90-3EC0-846A-D14A413308A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object Libraries">
+      <UniqueIdentifier>{B378900C-E372-37FC-B0F3-5EBE8B8A2FEC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

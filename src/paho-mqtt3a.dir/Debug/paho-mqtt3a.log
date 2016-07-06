@@ -1,0 +1,36 @@
+﻿  Building Custom Rule C:/Users/antonio.garcia/workspace_pahoMqtt/pahoC/src/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\CMakeFiles\generate.stamp is up-to-date.
+  MQTTAsync.c
+c:\users\antonio.garcia\workspace_pahomqtt\pahoc\src\Socket.h(28): warning C4005: 'EAGAIN': macro redefinition
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\errno.h(44): note: see previous definition of 'EAGAIN'
+c:\users\antonio.garcia\workspace_pahomqtt\pahoc\src\Socket.h(29): warning C4005: 'EINTR': macro redefinition
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\errno.h(37): note: see previous definition of 'EINTR'
+c:\users\antonio.garcia\workspace_pahomqtt\pahoc\src\Socket.h(30): warning C4005: 'EINPROGRESS': macro redefinition
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\errno.h(96): note: see previous definition of 'EINPROGRESS'
+c:\users\antonio.garcia\workspace_pahomqtt\pahoc\src\Socket.h(31): warning C4005: 'EWOULDBLOCK': macro redefinition
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\errno.h(124): note: see previous definition of 'EWOULDBLOCK'
+c:\users\antonio.garcia\workspace_pahomqtt\pahoc\src\Socket.h(32): warning C4005: 'ENOTCONN': macro redefinition
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\errno.h(110): note: see previous definition of 'ENOTCONN'
+c:\users\antonio.garcia\workspace_pahomqtt\pahoc\src\Socket.h(33): warning C4005: 'ECONNRESET': macro redefinition
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\errno.h(92): note: see previous definition of 'ECONNRESET'
+c:\users\antonio.garcia\workspace_pahomqtt\pahoc\src\Socket.h(34): warning C4005: 'ETIMEDOUT': macro redefinition
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\errno.h(122): note: see previous definition of 'ETIMEDOUT'
+C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\MQTTAsync.c(348): warning C4996: 'strerror': This function or variable may be unsafe. Consider using strerror_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(178): note: see declaration of 'strerror'
+C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\MQTTAsync.c(356): warning C4996: 'strerror': This function or variable may be unsafe. Consider using strerror_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(178): note: see declaration of 'strerror'
+C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\MQTTAsync.c(488): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\MQTTAsync.c(531): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\MQTTAsync.c(554): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\MQTTAsync.c(584): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\MQTTAsync.c(632): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\MQTTAsync.c(649): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\src\MQTTAsync.c(657): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+LINK : fatal error LNK1104: cannot open file 'pthread.lib'

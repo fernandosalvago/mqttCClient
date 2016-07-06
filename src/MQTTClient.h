@@ -219,48 +219,48 @@ typedef struct
 	/** A pointer to the payload of the MQTT message. */
 	void* payload;
 	/** 
-     * The quality of service (QoS) assigned to the message. 
-     * There are three levels of QoS:
-     * <DL>
-     * <DT><B>QoS0</B></DT>
-     * <DD>Fire and forget - the message may not be delivered</DD>
-     * <DT><B>QoS1</B></DT>
-     * <DD>At least once - the message will be delivered, but may be 
-     * delivered more than once in some circumstances.</DD>
-     * <DT><B>QoS2</B></DT>
-     * <DD>Once and one only - the message will be delivered exactly once.</DD>
-     * </DL>
-     */
+	 * The quality of service (QoS) assigned to the message. 
+	 * There are three levels of QoS:
+	 * <DL>
+	 * <DT><B>QoS0</B></DT>
+	 * <DD>Fire and forget - the message may not be delivered</DD>
+	 * <DT><B>QoS1</B></DT>
+	 * <DD>At least once - the message will be delivered, but may be 
+	 * delivered more than once in some circumstances.</DD>
+	 * <DT><B>QoS2</B></DT>
+	 * <DD>Once and one only - the message will be delivered exactly once.</DD>
+	 * </DL>
+	 */
 	int qos;
 	/** 
-     * The retained flag serves two purposes depending on whether the message
-     * it is associated with is being published or received. 
-     * 
-     * <b>retained = true</b><br>
-     * For messages being published, a true setting indicates that the MQTT 
-     * server should retain a copy of the message. The message will then be 
-     * transmitted to new subscribers to a topic that matches the message topic.
-     * For subscribers registering a new subscription, the flag being true
-     * indicates that the received message is not a new one, but one that has
-     * been retained by the MQTT server.
-     *
-     * <b>retained = false</b> <br>
-     * For publishers, this ndicates that this message should not be retained 
-     * by the MQTT server. For subscribers, a false setting indicates this is 
-     * a normal message, received as a result of it being published to the 
-     * server.
-     */
+	 * The retained flag serves two purposes depending on whether the message
+	 * it is associated with is being published or received. 
+	 * 
+	 * <b>retained = true</b><br>
+	 * For messages being published, a true setting indicates that the MQTT 
+	 * server should retain a copy of the message. The message will then be 
+	 * transmitted to new subscribers to a topic that matches the message topic.
+	 * For subscribers registering a new subscription, the flag being true
+	 * indicates that the received message is not a new one, but one that has
+	 * been retained by the MQTT server.
+	 *
+	 * <b>retained = false</b> <br>
+	 * For publishers, this ndicates that this message should not be retained 
+	 * by the MQTT server. For subscribers, a false setting indicates this is 
+	 * a normal message, received as a result of it being published to the 
+	 * server.
+	 */
 	int retained;
 	/** 
-      * The dup flag indicates whether or not this message is a duplicate. 
-      * It is only meaningful when receiving QoS1 messages. When true, the
-      * client application should take appropriate action to deal with the
-      * duplicate message.
-      */
+	  * The dup flag indicates whether or not this message is a duplicate. 
+	  * It is only meaningful when receiving QoS1 messages. When true, the
+	  * client application should take appropriate action to deal with the
+	  * duplicate message.
+	  */
 	int dup;
 	/** The message identifier is normally reserved for internal use by the
-      * MQTT client and server. 
-      */
+	  * MQTT client and server. 
+	  */
 	int msgid;
 } MQTTClient_message;
 
@@ -434,13 +434,13 @@ typedef struct
 	/** The LWT payload. */
 	const char* message;
 	/**
-      * The retained flag for the LWT message (see MQTTClient_message.retained).
-      */
+	  * The retained flag for the LWT message (see MQTTClient_message.retained).
+	  */
 	int retained;
 	/** 
-      * The quality of service setting for the LWT message (see 
-      * MQTTClient_message.qos and @ref qos).
-      */
+	  * The quality of service setting for the LWT message (see 
+	  * MQTTClient_message.qos and @ref qos).
+	  */
 	int qos;
 } MQTTClient_willOptions;
 
@@ -490,8 +490,8 @@ typedef struct
 	*/
 	const char* enabledCipherSuites;
 
-    /** True/False option to enable verification of the server certificate **/
-    int enableServerCertAuth;
+	/** True/False option to enable verification of the server certificate **/
+	int enableServerCertAuth;
   
 } MQTTClient_SSLOptions;
 
@@ -922,7 +922,7 @@ DLLExport void MQTTClient_destroy(MQTTClient* handle);
 
 #endif
 #ifdef __cplusplus
-     }
+	 }
 #endif
 
 /**
@@ -1049,35 +1049,35 @@ DLLExport void MQTTClient_destroy(MQTTClient* handle);
 
 int main(int argc, char* argv[])
 {
-    MQTTClient client;
-    MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
-    MQTTClient_message pubmsg = MQTTClient_message_initializer;
-    MQTTClient_deliveryToken token;
-    int rc;
+	MQTTClient client;
+	MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
+	MQTTClient_message pubmsg = MQTTClient_message_initializer;
+	MQTTClient_deliveryToken token;
+	int rc;
 
-    MQTTClient_create(&client, ADDRESS, CLIENTID,
-        MQTTCLIENT_PERSISTENCE_NONE, NULL);
-    conn_opts.keepAliveInterval = 20;
-    conn_opts.cleansession = 1;
+	MQTTClient_create(&client, ADDRESS, CLIENTID,
+		MQTTCLIENT_PERSISTENCE_NONE, NULL);
+	conn_opts.keepAliveInterval = 20;
+	conn_opts.cleansession = 1;
 
-    if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
-    {
-        printf("Failed to connect, return code %d\n", rc);
-        exit(-1);
-    }
-    pubmsg.payload = PAYLOAD;
-    pubmsg.payloadlen = strlen(PAYLOAD);
-    pubmsg.qos = QOS;
-    pubmsg.retained = 0;
-    MQTTClient_publishMessage(client, TOPIC, &pubmsg, &token);
-    printf("Waiting for up to %d seconds for publication of %s\n"
-            "on topic %s for client with ClientID: %s\n",
-            (int)(TIMEOUT/1000), PAYLOAD, TOPIC, CLIENTID);
-    rc = MQTTClient_waitForCompletion(client, token, TIMEOUT);
-    printf("Message with delivery token %d delivered\n", token);
-    MQTTClient_disconnect(client, 10000);
-    MQTTClient_destroy(&client);
-    return rc;
+	if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
+	{
+		printf("Failed to connect, return code %d\n", rc);
+		exit(-1);
+	}
+	pubmsg.payload = PAYLOAD;
+	pubmsg.payloadlen = strlen(PAYLOAD);
+	pubmsg.qos = QOS;
+	pubmsg.retained = 0;
+	MQTTClient_publishMessage(client, TOPIC, &pubmsg, &token);
+	printf("Waiting for up to %d seconds for publication of %s\n"
+			"on topic %s for client with ClientID: %s\n",
+			(int)(TIMEOUT/1000), PAYLOAD, TOPIC, CLIENTID);
+	rc = MQTTClient_waitForCompletion(client, token, TIMEOUT);
+	printf("Message with delivery token %d delivered\n", token);
+	MQTTClient_disconnect(client, 10000);
+	MQTTClient_destroy(&client);
+	return rc;
 }
 
   * @endcode
@@ -1100,69 +1100,69 @@ volatile MQTTClient_deliveryToken deliveredtoken;
 
 void delivered(void *context, MQTTClient_deliveryToken dt)
 {
-    printf("Message with token value %d delivery confirmed\n", dt);
-    deliveredtoken = dt;
+	printf("Message with token value %d delivery confirmed\n", dt);
+	deliveredtoken = dt;
 }
 
 int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_message *message)
 {
-    int i;
-    char* payloadptr;
+	int i;
+	char* payloadptr;
 
-    printf("Message arrived\n");
-    printf("     topic: %s\n", topicName);
-    printf("   message: ");
+	printf("Message arrived\n");
+	printf("     topic: %s\n", topicName);
+	printf("   message: ");
 
-    payloadptr = message->payload;
-    for(i=0; i<message->payloadlen; i++)
-    {
-        putchar(*payloadptr++);
-    }
-    putchar('\n');
-    MQTTClient_freeMessage(&message);
-    MQTTClient_free(topicName);
-    return 1;
+	payloadptr = message->payload;
+	for(i=0; i<message->payloadlen; i++)
+	{
+		putchar(*payloadptr++);
+	}
+	putchar('\n');
+	MQTTClient_freeMessage(&message);
+	MQTTClient_free(topicName);
+	return 1;
 }
 
 void connlost(void *context, char *cause)
 {
-    printf("\nConnection lost\n");
-    printf("     cause: %s\n", cause);
+	printf("\nConnection lost\n");
+	printf("     cause: %s\n", cause);
 }
 
 int main(int argc, char* argv[])
 {
-    MQTTClient client;
-    MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
-    MQTTClient_message pubmsg = MQTTClient_message_initializer;
-    MQTTClient_deliveryToken token;
-    int rc;
+	MQTTClient client;
+	MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
+	MQTTClient_message pubmsg = MQTTClient_message_initializer;
+	MQTTClient_deliveryToken token;
+	int rc;
 
-    MQTTClient_create(&client, ADDRESS, CLIENTID,
-        MQTTCLIENT_PERSISTENCE_NONE, NULL);
-    conn_opts.keepAliveInterval = 20;
-    conn_opts.cleansession = 1;
+	MQTTClient_create(&client, ADDRESS, CLIENTID,
+		MQTTCLIENT_PERSISTENCE_NONE, NULL);
+	conn_opts.keepAliveInterval = 20;
+	conn_opts.cleansession = 1;
 
-    MQTTClient_setCallbacks(client, NULL, connlost, msgarrvd, delivered);
+	MQTTClient_setCallbacks(client, NULL, connlost, msgarrvd, delivered);
 
-    if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
-    {
-        printf("Failed to connect, return code %d\n", rc);
-        exit(-1);	
-    }
-    pubmsg.payload = PAYLOAD;
-    pubmsg.payloadlen = strlen(PAYLOAD);
-    pubmsg.qos = QOS;
-    pubmsg.retained = 0;
-    deliveredtoken = 0;
-    MQTTClient_publishMessage(client, TOPIC, &pubmsg, &token);
-    printf("Waiting for publication of %s\n"
-            "on topic %s for client with ClientID: %s\n",
-            PAYLOAD, TOPIC, CLIENTID);
-    while(deliveredtoken != token);
-    MQTTClient_disconnect(client, 10000);
-    MQTTClient_destroy(&client);
-    return rc;
+	if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
+	{
+		printf("Failed to connect, return code %d\n", rc);
+		exit(-1);	
+	}
+	pubmsg.payload = PAYLOAD;
+	pubmsg.payloadlen = strlen(PAYLOAD);
+	pubmsg.qos = QOS;
+	pubmsg.retained = 0;
+	deliveredtoken = 0;
+	MQTTClient_publishMessage(client, TOPIC, &pubmsg, &token);
+	printf("Waiting for publication of %s\n"
+			"on topic %s for client with ClientID: %s\n",
+			PAYLOAD, TOPIC, CLIENTID);
+	while(deliveredtoken != token);
+	MQTTClient_disconnect(client, 10000);
+	MQTTClient_destroy(&client);
+	return rc;
 }
   
   * @endcode
@@ -1184,69 +1184,69 @@ volatile MQTTClient_deliveryToken deliveredtoken;
 
 void delivered(void *context, MQTTClient_deliveryToken dt)
 {
-    printf("Message with token value %d delivery confirmed\n", dt);
-    deliveredtoken = dt;
+	printf("Message with token value %d delivery confirmed\n", dt);
+	deliveredtoken = dt;
 }
 
 int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_message *message)
 {
-    int i;
-    char* payloadptr;
+	int i;
+	char* payloadptr;
 
-    printf("Message arrived\n");
-    printf("     topic: %s\n", topicName);
-    printf("   message: ");
+	printf("Message arrived\n");
+	printf("     topic: %s\n", topicName);
+	printf("   message: ");
 
-    payloadptr = message->payload;
-    for(i=0; i<message->payloadlen; i++)
-    {
-        putchar(*payloadptr++);
-    }
-    putchar('\n');
-    MQTTClient_freeMessage(&message);
-    MQTTClient_free(topicName);
-    return 1;
+	payloadptr = message->payload;
+	for(i=0; i<message->payloadlen; i++)
+	{
+		putchar(*payloadptr++);
+	}
+	putchar('\n');
+	MQTTClient_freeMessage(&message);
+	MQTTClient_free(topicName);
+	return 1;
 }
 
 void connlost(void *context, char *cause)
 {
-    printf("\nConnection lost\n");
-    printf("     cause: %s\n", cause);
+	printf("\nConnection lost\n");
+	printf("     cause: %s\n", cause);
 }
 
 int main(int argc, char* argv[])
 {
-    MQTTClient client;
-    MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
-    int rc;
-    int ch;
+	MQTTClient client;
+	MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
+	int rc;
+	int ch;
 
-    MQTTClient_create(&client, ADDRESS, CLIENTID,
-        MQTTCLIENT_PERSISTENCE_NONE, NULL);
-    conn_opts.keepAliveInterval = 20;
-    conn_opts.cleansession = 1;
+	MQTTClient_create(&client, ADDRESS, CLIENTID,
+		MQTTCLIENT_PERSISTENCE_NONE, NULL);
+	conn_opts.keepAliveInterval = 20;
+	conn_opts.cleansession = 1;
 
-    MQTTClient_setCallbacks(client, NULL, connlost, msgarrvd, delivered);
+	MQTTClient_setCallbacks(client, NULL, connlost, msgarrvd, delivered);
 
-    if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
-    {
-        printf("Failed to connect, return code %d\n", rc);
-        exit(-1);	
-    }
-    printf("Subscribing to topic %s\nfor client %s using QoS%d\n\n"
-           "Press Q<Enter> to quit\n\n", TOPIC, CLIENTID, QOS);
-    MQTTClient_subscribe(client, TOPIC, QOS);
+	if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
+	{
+		printf("Failed to connect, return code %d\n", rc);
+		exit(-1);	
+	}
+	printf("Subscribing to topic %s\nfor client %s using QoS%d\n\n"
+		   "Press Q<Enter> to quit\n\n", TOPIC, CLIENTID, QOS);
+	MQTTClient_subscribe(client, TOPIC, QOS);
 
-    do 
-    {
-        ch = getchar();
-    } while(ch!='Q' && ch != 'q');
+	do 
+	{
+		ch = getchar();
+	} while(ch!='Q' && ch != 'q');
 
-    MQTTClient_disconnect(client, 10000);
-    MQTTClient_destroy(&client);
-    return rc;
+	MQTTClient_disconnect(client, 10000);
+	MQTTClient_destroy(&client);
+	return rc;
 }
-              
+			  
   * @endcode
   * @page tracing Tracing
   * 
@@ -1268,16 +1268,16 @@ int main(int argc, char* argv[])
   * A feature that can be very useful is printing the MQTT packets that are sent and received.  To 
   * achieve this, use the following environment variable settings:
   * @code
-    MQTT_C_CLIENT_TRACE=ON
-    MQTT_C_CLIENT_TRACE_LEVEL=PROTOCOL
+	MQTT_C_CLIENT_TRACE=ON
+	MQTT_C_CLIENT_TRACE_LEVEL=PROTOCOL
   * @endcode
   * The output you should see looks like this:
   * @code
-    20130528 155936.813 3 stdout-subscriber -> CONNECT cleansession: 1 (0)
-    20130528 155936.813 3 stdout-subscriber <- CONNACK rc: 0
-    20130528 155936.813 3 stdout-subscriber -> SUBSCRIBE msgid: 1 (0)
-    20130528 155936.813 3 stdout-subscriber <- SUBACK msgid: 1
-    20130528 155941.818 3 stdout-subscriber -> DISCONNECT (0)
+	20130528 155936.813 3 stdout-subscriber -> CONNECT cleansession: 1 (0)
+	20130528 155936.813 3 stdout-subscriber <- CONNACK rc: 0
+	20130528 155936.813 3 stdout-subscriber -> SUBSCRIBE msgid: 1 (0)
+	20130528 155936.813 3 stdout-subscriber <- SUBACK msgid: 1
+	20130528 155941.818 3 stdout-subscriber -> DISCONNECT (0)
   * @endcode
   * where the fields are:
   * 1. date
@@ -1291,23 +1291,23 @@ int main(int argc, char* argv[])
   * 
   * This is an extract of a default level trace of a call to connect:
   * @code
-    19700101 010000.000 (1152206656) (0)> MQTTClient_connect:893
-    19700101 010000.000 (1152206656)  (1)> MQTTClient_connectURI:716
-    20130528 160447.479 Connecting to serverURI localhost:1883
-    20130528 160447.479 (1152206656)   (2)> MQTTProtocol_connect:98
-    20130528 160447.479 (1152206656)    (3)> MQTTProtocol_addressPort:48
-    20130528 160447.479 (1152206656)    (3)< MQTTProtocol_addressPort:73
-    20130528 160447.479 (1152206656)    (3)> Socket_new:599
-    20130528 160447.479 New socket 4 for localhost, port 1883
-    20130528 160447.479 (1152206656)     (4)> Socket_addSocket:163
-    20130528 160447.479 (1152206656)      (5)> Socket_setnonblocking:73
-    20130528 160447.479 (1152206656)      (5)< Socket_setnonblocking:78 (0)
-    20130528 160447.479 (1152206656)     (4)< Socket_addSocket:176 (0)
-    20130528 160447.479 (1152206656)     (4)> Socket_error:95
-    20130528 160447.479 (1152206656)     (4)< Socket_error:104 (115)
-    20130528 160447.479 Connect pending
-    20130528 160447.479 (1152206656)    (3)< Socket_new:683 (115)
-    20130528 160447.479 (1152206656)   (2)< MQTTProtocol_connect:131 (115)
+	19700101 010000.000 (1152206656) (0)> MQTTClient_connect:893
+	19700101 010000.000 (1152206656)  (1)> MQTTClient_connectURI:716
+	20130528 160447.479 Connecting to serverURI localhost:1883
+	20130528 160447.479 (1152206656)   (2)> MQTTProtocol_connect:98
+	20130528 160447.479 (1152206656)    (3)> MQTTProtocol_addressPort:48
+	20130528 160447.479 (1152206656)    (3)< MQTTProtocol_addressPort:73
+	20130528 160447.479 (1152206656)    (3)> Socket_new:599
+	20130528 160447.479 New socket 4 for localhost, port 1883
+	20130528 160447.479 (1152206656)     (4)> Socket_addSocket:163
+	20130528 160447.479 (1152206656)      (5)> Socket_setnonblocking:73
+	20130528 160447.479 (1152206656)      (5)< Socket_setnonblocking:78 (0)
+	20130528 160447.479 (1152206656)     (4)< Socket_addSocket:176 (0)
+	20130528 160447.479 (1152206656)     (4)> Socket_error:95
+	20130528 160447.479 (1152206656)     (4)< Socket_error:104 (115)
+	20130528 160447.479 Connect pending
+	20130528 160447.479 (1152206656)    (3)< Socket_new:683 (115)
+	20130528 160447.479 (1152206656)   (2)< MQTTProtocol_connect:131 (115)
   * @endcode
   * where the fields are:
   * 1. date
@@ -1323,19 +1323,19 @@ int main(int argc, char* argv[])
   * Setting the trace level to maximum causes memory allocations and frees to be traced along with 
   * the default trace entries, with messages like the following:
   * @code
-    20130528 161819.657 Allocating 16 bytes in heap at file /home/icraggs/workspaces/mqrtc/mqttv3c/src/MQTTPacket.c line 177 ptr 0x179f930
+	20130528 161819.657 Allocating 16 bytes in heap at file /home/icraggs/workspaces/mqrtc/mqttv3c/src/MQTTPacket.c line 177 ptr 0x179f930
 
-    20130528 161819.657 Freeing 16 bytes in heap at file /home/icraggs/workspaces/mqrtc/mqttv3c/src/MQTTPacket.c line 201, heap use now 896 bytes
+	20130528 161819.657 Freeing 16 bytes in heap at file /home/icraggs/workspaces/mqrtc/mqttv3c/src/MQTTPacket.c line 201, heap use now 896 bytes
   * @endcode
   * When the last MQTT client object is destroyed, if the trace is being recorded 
   * and all memory allocated by the client library has not been freed, an error message will be
   * written to the trace.  This can help with fixing memory leaks.  The message will look like this:
   * @code
-    20130528 163909.208 Some memory not freed at shutdown, possible memory leak
-    20130528 163909.208 Heap scan start, total 880 bytes
-    20130528 163909.208 Heap element size 32, line 354, file /home/icraggs/workspaces/mqrtc/mqttv3c/src/MQTTPacket.c, ptr 0x260cb00
-    20130528 163909.208   Content           
-    20130528 163909.209 Heap scan end
+	20130528 163909.208 Some memory not freed at shutdown, possible memory leak
+	20130528 163909.208 Heap scan start, total 880 bytes
+	20130528 163909.208 Heap element size 32, line 354, file /home/icraggs/workspaces/mqrtc/mqttv3c/src/MQTTPacket.c, ptr 0x260cb00
+	20130528 163909.208   Content           
+	20130528 163909.209 Heap scan end
   * @endcode
   * @endcond
   */

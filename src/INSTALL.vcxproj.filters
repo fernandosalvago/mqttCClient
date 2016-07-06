@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\antonio.garcia\workspace_pahoMqtt\pahoC\CMakeFiles\782c427c18ec2a85489b6d5b00e698cc\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{635879E6-A015-3413-A4C1-7AFB279A3B58}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

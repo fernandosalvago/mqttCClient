@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "paho-mqtt3c", "paho-mqtt3c\paho-mqtt3c.vcxproj", "{172F8995-C780-44A1-996C-C7949B4DB35A}"
 EndProject
@@ -23,7 +23,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "paho-mqtt3as", "paho-mqtt3a
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "paho-mqtt3cs", "paho-mqtt3cs\paho-mqtt3cs.vcxproj", "{17F07F98-AA5F-4373-9877-992A341D650A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test1", "test1\test1.vcxproj", "{4E643090-289D-487D-BCA8-685EA2210480}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pubasync", "test1\test1.vcxproj", "{4E643090-289D-487D-BCA8-685EA2210480}"
 	ProjectSection(ProjectDependencies) = postProject
 		{172F8995-C780-44A1-996C-C7949B4DB35A} = {172F8995-C780-44A1-996C-C7949B4DB35A}
 	EndProjectSection
@@ -33,6 +33,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test4", "test4\test4.vcxproj", "{29D6A4E9-5A39-4CD3-8A24-348A34832405}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test5", "test5\test5.vcxproj", "{B8A895EA-C8DE-4235-B4B4-06889BBBDC93}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "subasync", "test1s\subasync.vcxproj", "{4DC7A8BD-83A6-40AE-9B5D-DD2A0856C11B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "subasyncandTx", "subasyncandTx\subasyncandTx.vcxproj", "{04B4FA51-D10B-4FF8-AC0C-D284A8B8438B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -130,6 +134,22 @@ Global
 		{B8A895EA-C8DE-4235-B4B4-06889BBBDC93}.Release|Win32.Build.0 = Release|Win32
 		{B8A895EA-C8DE-4235-B4B4-06889BBBDC93}.Release|x64.ActiveCfg = Release|x64
 		{B8A895EA-C8DE-4235-B4B4-06889BBBDC93}.Release|x64.Build.0 = Release|x64
+		{4DC7A8BD-83A6-40AE-9B5D-DD2A0856C11B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4DC7A8BD-83A6-40AE-9B5D-DD2A0856C11B}.Debug|Win32.Build.0 = Debug|Win32
+		{4DC7A8BD-83A6-40AE-9B5D-DD2A0856C11B}.Debug|x64.ActiveCfg = Debug|x64
+		{4DC7A8BD-83A6-40AE-9B5D-DD2A0856C11B}.Debug|x64.Build.0 = Debug|x64
+		{4DC7A8BD-83A6-40AE-9B5D-DD2A0856C11B}.Release|Win32.ActiveCfg = Release|Win32
+		{4DC7A8BD-83A6-40AE-9B5D-DD2A0856C11B}.Release|Win32.Build.0 = Release|Win32
+		{4DC7A8BD-83A6-40AE-9B5D-DD2A0856C11B}.Release|x64.ActiveCfg = Release|x64
+		{4DC7A8BD-83A6-40AE-9B5D-DD2A0856C11B}.Release|x64.Build.0 = Release|x64
+		{04B4FA51-D10B-4FF8-AC0C-D284A8B8438B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{04B4FA51-D10B-4FF8-AC0C-D284A8B8438B}.Debug|Win32.Build.0 = Debug|Win32
+		{04B4FA51-D10B-4FF8-AC0C-D284A8B8438B}.Debug|x64.ActiveCfg = Debug|x64
+		{04B4FA51-D10B-4FF8-AC0C-D284A8B8438B}.Debug|x64.Build.0 = Debug|x64
+		{04B4FA51-D10B-4FF8-AC0C-D284A8B8438B}.Release|Win32.ActiveCfg = Release|Win32
+		{04B4FA51-D10B-4FF8-AC0C-D284A8B8438B}.Release|Win32.Build.0 = Release|Win32
+		{04B4FA51-D10B-4FF8-AC0C-D284A8B8438B}.Release|x64.ActiveCfg = Release|x64
+		{04B4FA51-D10B-4FF8-AC0C-D284A8B8438B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

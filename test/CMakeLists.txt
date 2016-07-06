@@ -24,13 +24,13 @@ INCLUDE_DIRECTORIES(
     )
 
 # test files c
-ADD_EXECUTABLE(test1 test1.c)
-ADD_EXECUTABLE(test2 test2.c)
+ADD_EXECUTABLE(pubasync pubasync.c)
+ADD_EXECUTABLE(subasync subasync.c)
 ADD_EXECUTABLE(sync_client_test sync_client_test.c)
 ADD_EXECUTABLE(test_mqtt4sync test_mqtt4sync.c)
 
-TARGET_LINK_LIBRARIES(test1 paho-mqtt3c)
-TARGET_LINK_LIBRARIES(test2 paho-mqtt3c)
+TARGET_LINK_LIBRARIES(pubasync paho-mqtt3c)
+TARGET_LINK_LIBRARIES(subasync paho-mqtt3c)
 TARGET_LINK_LIBRARIES(sync_client_test paho-mqtt3c)
 TARGET_LINK_LIBRARIES(test_mqtt4sync paho-mqtt3c)
 
@@ -44,8 +44,8 @@ TARGET_LINK_LIBRARIES(test6 paho-mqtt3a)
 TARGET_LINK_LIBRARIES(test8 paho-mqtt3a)
 TARGET_LINK_LIBRARIES(test_mqtt4async paho-mqtt3a)
 
-INSTALL(TARGETS test1
-                test2
+INSTALL(TARGETS pubasync
+                subasync
                 test4
                 test6
                 test8

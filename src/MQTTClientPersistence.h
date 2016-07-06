@@ -210,40 +210,40 @@ typedef int (*Persistence_containskey)(void* handle, char* key);
   */
 typedef struct {
   /** 
-    * A pointer to any data required to initialize the persistent store.
-    */
+	* A pointer to any data required to initialize the persistent store.
+	*/
 	void* context;
   /** 
-    * A function pointer to an implementation of Persistence_open().
-    */
+	* A function pointer to an implementation of Persistence_open().
+	*/
 	Persistence_open popen;
   /** 
-    * A function pointer to an implementation of Persistence_close().
-    */
+	* A function pointer to an implementation of Persistence_close().
+	*/
 	Persistence_close pclose;
   /**
-    * A function pointer to an implementation of Persistence_put().
-    */
+	* A function pointer to an implementation of Persistence_put().
+	*/
 	Persistence_put pput;
   /** 
-    * A function pointer to an implementation of Persistence_get().
-    */
+	* A function pointer to an implementation of Persistence_get().
+	*/
 	Persistence_get pget;
   /** 
-    * A function pointer to an implementation of Persistence_remove().
-    */
+	* A function pointer to an implementation of Persistence_remove().
+	*/
 	Persistence_remove premove;
   /** 
-    * A function pointer to an implementation of Persistence_keys().
-    */
+	* A function pointer to an implementation of Persistence_keys().
+	*/
 	Persistence_keys pkeys;
   /** 
-    * A function pointer to an implementation of Persistence_clear().
-    */
+	* A function pointer to an implementation of Persistence_clear().
+	*/
 	Persistence_clear pclear;
   /** 
-    * A function pointer to an implementation of Persistence_containskey().
-    */
+	* A function pointer to an implementation of Persistence_containskey().
+	*/
 	Persistence_containskey pcontainskey;
 } MQTTClient_persistence;
 

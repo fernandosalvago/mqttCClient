@@ -461,7 +461,7 @@ int main(int argc, char *argv[])
 	h = realloc(h, 255);
 	h = realloc(h, 2225);
 	h = realloc(h, 22225);
-    printf("freeing h\n");
+	printf("freeing h\n");
 	free(h);
 	Heap_terminate();
 	printf("Finishing\n");

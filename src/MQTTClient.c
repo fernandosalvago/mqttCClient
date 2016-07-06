@@ -57,12 +57,12 @@
 #include "Heap.h"
 
 #if defined(OPENSSL)
-#include <openssl/ssl.h>
+#include "SSLSocket.h"
 #endif
 
 #define URI_TCP "tcp://"
 
-#include <VersionInfo.h>
+#include "VersionInfo.h"
 
 char* client_timestamp_eye = "MQTTClientV3_Timestamp " BUILD_TIMESTAMP;
 char* client_version_eye = "MQTTClientV3_Version " CLIENT_VERSION;
@@ -1449,7 +1449,7 @@ int MQTTClient_publish(MQTTClient handle, const char* topicName, int payloadlen,
 
 	/* If outbound queue is full, block until it is not */
 	while (m->c->outboundMsgs->count >= m->c->maxInflightMessages || 
-         Socket_noPendingWrites(m->c->net.socket) == 0) /* wait until the socket is free of large packets being written */
+		 Socket_noPendingWrites(m->c->net.socket) == 0) /* wait until the socket is free of large packets being written */
 	{
 		if (blocked == 0)
 		{

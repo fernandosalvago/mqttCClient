@@ -1,0 +1,10 @@
+C:/Users/antonio.garcia/workspace_pahoMqtt/pahoC/CMakeFiles/PACKAGE.dir
+C:/Users/antonio.garcia/workspace_pahoMqtt/pahoC/CMakeFiles/INSTALL.dir
+C:/Users/antonio.garcia/workspace_pahoMqtt/pahoC/CMakeFiles/ALL_BUILD.dir
+C:/Users/antonio.garcia/workspace_pahoMqtt/pahoC/CMakeFiles/ZERO_CHECK.dir
+C:/Users/antonio.garcia/workspace_pahoMqtt/pahoC/src/CMakeFiles/PACKAGE.dir
+C:/Users/antonio.garcia/workspace_pahoMqtt/pahoC/src/CMakeFiles/MQTTVersion.dir
+C:/Users/antonio.garcia/workspace_pahoMqtt/pahoC/src/CMakeFiles/common_obj.dir
+C:/Users/antonio.garcia/workspace_pahoMqtt/pahoC/src/CMakeFiles/paho-mqtt3c.dir
+C:/Users/antonio.garcia/workspace_pahoMqtt/pahoC/src/CMakeFiles/paho-mqtt3a.dir
+C:/Users/antonio.garcia/workspace_pahoMqtt/pahoC/src/CMakeFiles/INSTALL.dir
