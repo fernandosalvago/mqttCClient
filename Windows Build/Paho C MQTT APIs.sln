@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "paho-mqtt3c", "paho-mqtt3c\paho-mqtt3c.vcxproj", "{172F8995-C780-44A1-996C-C7949B4DB35A}"
 EndProject
@@ -28,6 +28,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "subasync", "subasync\subasync.vcxproj", "{4DC7A8BD-83A6-40AE-9B5D-DD2A0856C11B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pubasync", "pubasync\pubasync.vcxproj", "{4E643090-289D-487D-BCA8-685EA2210480}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pubsync", "pubsync\pubsync.vcxproj", "{52DC6E6F-F7D9-4938-87FF-E92F97629BE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,14 @@ Global
 		{4E643090-289D-487D-BCA8-685EA2210480}.Release|Win32.Build.0 = Release|Win32
 		{4E643090-289D-487D-BCA8-685EA2210480}.Release|x64.ActiveCfg = Release|x64
 		{4E643090-289D-487D-BCA8-685EA2210480}.Release|x64.Build.0 = Release|x64
+		{52DC6E6F-F7D9-4938-87FF-E92F97629BE2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{52DC6E6F-F7D9-4938-87FF-E92F97629BE2}.Debug|Win32.Build.0 = Debug|Win32
+		{52DC6E6F-F7D9-4938-87FF-E92F97629BE2}.Debug|x64.ActiveCfg = Debug|x64
+		{52DC6E6F-F7D9-4938-87FF-E92F97629BE2}.Debug|x64.Build.0 = Debug|x64
+		{52DC6E6F-F7D9-4938-87FF-E92F97629BE2}.Release|Win32.ActiveCfg = Release|Win32
+		{52DC6E6F-F7D9-4938-87FF-E92F97629BE2}.Release|Win32.Build.0 = Release|Win32
+		{52DC6E6F-F7D9-4938-87FF-E92F97629BE2}.Release|x64.ActiveCfg = Release|x64
+		{52DC6E6F-F7D9-4938-87FF-E92F97629BE2}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
